@@ -1,8 +1,9 @@
-import SectionPrincipal from "../components/organisms/SectionPrincipal"
+import Navbar from "../components/molecules/navbar";
+import HomeTem from "../templates/HomeTem";
 
 function Home() {
     return(
-        <SectionPrincipal></SectionPrincipal>
-    )
+        <Navbar></Navbar>
+    );
 }
-export default Home
+export default Home;
