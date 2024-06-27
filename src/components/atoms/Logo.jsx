@@ -1,6 +1,6 @@
 function Logo() {
     return(
-        <img src="logo-removebg-preview.png" alt="" />
+        <img src="Logo.png" alt="" />
     );
 }
 export default Logo 

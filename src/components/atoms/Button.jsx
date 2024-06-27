@@ -1,6 +1,6 @@
 function Button({title,onClick}) {
     return(
-        <button className="bg-sky-500 hover:bg-sky-700 rounded-3xl" 
+        <button className="w-full py-1 text-white bg-blue-500 rounded-full hover:bg-blue-600" 
         onClick={onClick}>{title}</button>
     );
 }
