@@ -31,7 +31,7 @@ function Formulario() {
     };
 
     return (
-        <div className="flex flex-col m-5 bg-azulIntegradorClaro">
+        <div className="bg-azulIntegradorClaro m-5 flex flex-col">
             <ElementoFormulario
                 text="No. Economico Vehiculo"
                 placeholder="No. Economico Vehiculo"
@@ -56,7 +56,7 @@ function Formulario() {
                         type="text"
                     />
                     <div className="flex justify-center font-bold text-black">
-                        <h1 className="p-5 m-2 font-bold text-white rounded-full bg-azulIntegrador w-80">
+                        <h1 className="m-2 font-bold bg-azulIntegrador rounded-full p-5 w-80 text-white">
                             Cantidad De Filtros:
                         </h1>
                         <form className="flex">
@@ -86,7 +86,7 @@ function Formulario() {
                         type="text"
                     />
                     <Button
-                        className="p-5 m-2 font-bold text-white rounded-full bg-azulIntegrador w-80"
+                        className="m-2 font-bold bg-azulIntegrador rounded-full p-5 w-80 text-white"
                         title="Resguardante"
                         onClick={openModal}
                     />
@@ -122,7 +122,7 @@ function Formulario() {
                 </div>
             </div>
 
-            <dialog open={isModalOpen} className="border-4 border-black bg-azulIntegradorClaro">
+            <dialog open={isModalOpen} className="bg-azulIntegradorClaro border-4 border-black">
                 <div className="flex flex-col">
                     <div className="flex justify-center font-sans text-lg">
                         <h1>Ingrese Los Datos</h1>
@@ -135,7 +135,7 @@ function Formulario() {
                 </div>
                 <div className="flex justify-center">
                     <button
-                        className="w-1/4 m-1 font-bold text-white bg-green-600 border p-7"
+                        className="p-7 font-bold text-white bg-green-600 m-1 w-1/4 border"
                         onClick={handleAddResguardante}
                     >
                         Añadir

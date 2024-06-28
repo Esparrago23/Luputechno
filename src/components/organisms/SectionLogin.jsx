@@ -28,8 +28,9 @@ function SectionLogin() {
                 <Field  text="" type="text" placeholder="Ingresa tu correo" value="" />
                 <Field text="" type="password" placeholder="Ingresa tu contraseña" value=""/>
            </div>
-           <div className= " w-[300px] py-1 text-white bg-blue-500 rounded-full hover:bg-blue-600 text-center">
-            <Button title="Iniciar Sesión" onClick={handlerClick}/>
+
+           <div className=" w-[300px] block w-full px-3 py-2 mt-1 bg-white border rounded-full shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 sm:text-sm focus:ring-1">
+                <Button title="Iniciar Sesión" onClick={handlerClick}/>
            </div>
           
         </div>

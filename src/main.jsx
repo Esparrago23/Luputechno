@@ -4,9 +4,11 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 import Home from './pages/Home.jsx'
 import './index.css'
+import Vehicules from './pages/Vehicules.jsx'
 const router = createBrowserRouter([
   {path: "/",element: <App/>},
-  {path: "/Principal",element: <Home/>}
+  {path: "/Principal",element: <Home/>},
+  {path: "/Vehicules",element: <Vehicules/>},
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

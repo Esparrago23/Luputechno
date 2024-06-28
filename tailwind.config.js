@@ -10,6 +10,7 @@ export default {
         'fondo-login':"#D4EAE7",
         'boton-icons':"#CAF0F8",
         'azulIntegrador' : '#4B86D1',
+        'azulIntegradorClaro' : '#CAF0F8',
       }
     },
   },
