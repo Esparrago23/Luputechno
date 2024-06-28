@@ -1,6 +1,7 @@
-import Navbar from "../molecules/navbar"
+
 import Label from "../atoms/Label"
 import Principal from "../molecules/Principal"
+
 
 function SectionPrincipal() {
     return (

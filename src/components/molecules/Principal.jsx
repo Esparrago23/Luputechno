@@ -5,7 +5,7 @@ import Button_icons from "../atoms/Button_icons";
 function Principal(props) {
     return (
         <div className="flex flex-col items-center space-y-4">
-            <div>
+            <div className="p-20 shadow-md ro-unded-lg bg-boton-icons">
                 <Button_icons>
                     <Img image={props.image} />
                 </Button_icons>

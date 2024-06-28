@@ -4,6 +4,10 @@ import Label from "../atoms/Label";
 import Img from "../atoms/Img";
 import Field from "../molecules/Field";
 
+
+
+
+
 function SectionLogin() {
     const navigate = useNavigate()
     const handlerClick = (e) => {
@@ -20,14 +24,14 @@ function SectionLogin() {
             <div className="w-40 h-40">
                 <Img image={"Logo.png"} />
             </div >
-           <div className="space-y-4 w-[300px] ">
+           <div className="space-y-4 w-[300px]">
                 <Field  text="" type="text" placeholder="Ingresa tu correo" value="" />
                 <Field text="" type="password" placeholder="Ingresa tu contraseña" value=""/>
            </div>
-           <div className= " w-[300px]">
-           <Button title="Iniciar Sesión" onClick={handlerClick}/>
+           <div className= " w-[300px] py-1 text-white bg-blue-500 rounded-full hover:bg-blue-600 text-center">
+            <Button title="Iniciar Sesión" onClick={handlerClick}/>
            </div>
-           
+          
         </div>
     );
 }

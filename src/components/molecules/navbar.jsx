@@ -1,45 +1,28 @@
 import { useNavigate } from "react-router-dom";
-import Img from "../atoms/Img";
-import Button_icons from "../atoms/Button_icons";
+import Button from "../atoms/Button";
+import VehicleDropdown from "../molecules/VehicleDropdown";
 
 function Navbar() {
   const navigate = useNavigate();
 
-  const handlerClick = (e) => {
-    navigate("/");
+  const handlerClick = (route) => {
+    navigate(route);
   };
+
   return (
-    <div>
-      <nav className="flex justify-center font-bold text-white bg-azulIntegrador">
+    <div className="bg-azulIntegrador">
+      <nav className="flex justify-center">
         <ul className="flex flex-row">
-          <li className="m-1">
-            <Button_icons>
-              <Img src="Logo"alt=""/>
-            </Button_icons>
-          </li>
-          <li className="m-10">
-            <Button_icons>Resguardante</Button_icons>
-          </li>
-          <li className="m-10">
-            <Button_icons>Vehiculos</Button_icons>
-          </li>
-          <li className="m-10">
-            <Button_icons>Mantenimiento</Button_icons>
-          </li>
-          <li className="m-10">
-            <Button_icons>Bitacora</Button_icons>
-          </li>
-          <li className="m-10">
-            <Button_icons>Usuarios</Button_icons>
-          </li>
-          <li className="m-10">
-            <Button_icons onClick={handlerClick}>
-              <Img src="Cerrar sesion.png" alt="" />
-            </Button_icons>
-          </li>
+          <li><Button className="w-full py-1 m-10 font-bold text-white" title={"Resguardante"} ></Button></li>
+          <li><VehicleDropdown /></li>
+          <li><Button className="w-full py-1 m-10 font-bold text-white" title={"Mantenimiento"} ></Button></li>
+          <li><Button className="w-full py-1 m-10 font-bold text-white" title={"Bitacora"} ></Button></li>
+          <li><Button className="w-full py-1 m-10 font-bold text-white" title={"Usuario"}></Button></li>
         </ul>
       </nav>
     </div>
   );
 }
+
 export default Navbar;
+
