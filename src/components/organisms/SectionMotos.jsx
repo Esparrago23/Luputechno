@@ -48,11 +48,11 @@ function SectionMotos() {
                 <div className="mb-4 text-4xl text-center text-stone-950">
                     <Label text="LISTO PARA TRABAJAR!" />
                 </div>
-                <div className="grid gap-4 grid-cols-2">
+                <div className="grid gap-5 grid-cols-2">
                     <Principal onClick={openModal} image={"Moto.png"} text="Añadir." />
                     <Principal image={"Moto.png"} text="Visualizar." />
-                    <Principal image={"editarEdit.png"} text="Editar." />
-                    <Principal onClick={() => openDeleteModal('vehiculos')} image={"eliminar.png"} text="Eliminar." />
+                    <Principal image={"pen-svgrepo-com(2).svg"} text="Editar." />
+                    <Principal onClick={() => openDeleteModal('vehiculos')} image={"trash-xmark-svgrepo-com.svg"} text="Eliminar." />
                 </div>
 
                 <dialog ref={modalRef} className="border-4 border-black bg-azulIntegradorClaro">
