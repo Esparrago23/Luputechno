@@ -1,6 +1,6 @@
-function Button({title,onClick}) {
+function Button({title,onClick,className}) {
     return(
-        <button onClick={onClick}>{title}</button>
+        <button className={className} onClick={onClick}>{title}</button>
     );
 }
 export default Button 

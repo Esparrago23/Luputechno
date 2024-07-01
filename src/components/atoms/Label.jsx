@@ -1,6 +1,6 @@
 function Label(props) {
     return(
-        <label>{props.text}</label>
+        <label className={props.className}>{props.text}</label>
     );
 }
 export default Label 

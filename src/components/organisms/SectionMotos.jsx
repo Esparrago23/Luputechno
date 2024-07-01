@@ -48,10 +48,10 @@ function SectionMotos() {
                 <div className="mb-4 text-4xl text-center text-stone-950">
                     <Label text="LISTO PARA TRABAJAR!" />
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid gap-4 grid-cols-2">
                     <Principal onClick={openModal} image={"Moto.png"} text="Añadir." />
                     <Principal image={"Moto.png"} text="Visualizar." />
-                    <Principal image={"editarEditado.png"} text="Editar." />
+                    <Principal image={"editarEdit.png"} text="Editar." />
                     <Principal onClick={() => openDeleteModal('vehiculos')} image={"eliminar.png"} text="Eliminar." />
                 </div>
 
@@ -65,7 +65,7 @@ function SectionMotos() {
                     </div>
                 </dialog>
 
-                <dialog ref={deleteModalRef} className="border-4 border-black bg-azulIntegradorClaro">
+                <dialog ref={deleteModalRef} className="border-4 border-black bg-azulIntegradorClaro w-1/3">
                     <div className="flex justify-center flex-col">
                         <ModalEliminar currentPage={currentPage} />
                         <button className="w-1/5 m-1 font-bold text-white bg-red-600 border p-4 w-full" onClick={closeDeleteModal}>Cerrar</button>
