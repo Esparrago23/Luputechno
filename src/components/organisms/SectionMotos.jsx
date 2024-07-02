@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 
 function SectionMotos() {
     const modalRef = useRef(null);
+    const modalRefEdit = useRef(null);
     const deleteModalRef = useRef(null);
     const [notification, setNotification] = useState('');
     const [currentPage, setCurrentPage] = useState('vehiculos');  // Definimos la página actual
@@ -15,6 +16,14 @@ function SectionMotos() {
         modalRef.current.showModal();
     };
 
+    const openEditModal = () => {
+        modalRefEdit.current.showModal();
+    };
+
+    const closeEditModal = () => {
+        modalRefEdit.current.close();
+    };
+    
     const closeModal = () => {
         modalRef.current.close();
     };
@@ -51,7 +60,7 @@ function SectionMotos() {
                 <div className="grid gap-5 grid-cols-2">
                     <Principal onClick={openModal} image={"Moto.png"} text="Añadir." />
                     <Principal image={"Moto.png"} text="Visualizar." />
-                    <Principal image={"pen-svgrepo-com(2).svg"} text="Editar." />
+                    <Principal onClick={openEditModal} image={"pen-svgrepo-com(2).svg"} text="Editar." />
                     <Principal onClick={() => openDeleteModal('vehiculos')} image={"trash-xmark-svgrepo-com.svg"} text="Eliminar." />
                 </div>
 
@@ -65,11 +74,22 @@ function SectionMotos() {
                     </div>
                 </dialog>
 
+                <dialog ref={modalRefEdit} className="border-4 border-black bg-azulIntegradorClaro">
+                    <div>
+                            <h1 className="font-bold m-2">Editar Datos</h1>
+                        <Formulario />
+                        <div className="flex justify-center">
+                            <button className="w-1/5 m-1 font-bold text-white bg-red-600 border p-7" onClick={closeEditModal}>Cerrar</button>
+                            <button className="w-1/5 m-1 font-bold text-black bg-yellow-400 border p-7" onClick={closeEditModal}>Editar</button>
+                        </div>
+                    </div>
+                </dialog>
+
                 <dialog ref={deleteModalRef} className="border-4 border-black bg-azulIntegradorClaro w-1/3">
                     <div className="flex justify-center flex-col">
                         <ModalEliminar currentPage={currentPage} />
-                        <button className="w-1/5 m-1 font-bold text-white bg-red-600 border p-4 w-full" onClick={closeDeleteModal}>Cerrar</button>
-                        <button className="w-1/5 m-1 font-bold text-white bg-red-600 border p-4 w-full" onClick={handleDelete}>Eliminar</button>
+                        <button className="w-1/5 m-1 font-bold text-white bg-red-600 border p-4" onClick={closeDeleteModal}>Cerrar</button>
+                        <button className="w-1/5 m-1 font-bold text-white bg-red-600 border p-4" onClick={handleDelete}>Eliminar</button>
                     </div>
                 </dialog>
 
