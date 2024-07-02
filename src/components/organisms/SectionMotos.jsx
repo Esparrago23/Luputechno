@@ -55,7 +55,7 @@ function SectionMotos() {
         <>
             <div className="flex flex-col items-center justify-center">
                 <div className="mb-4 text-4xl text-center text-stone-950">
-                    <Label text="LISTO PARA TRABAJAR!" />
+                    <Label className="font-bold m-2" text="LISTO PARA TRABAJAR!" />
                 </div>
                 <div className="grid gap-5 grid-cols-2">
                     <Principal onClick={openModal} image={"Moto.png"} text="Añadir." />
@@ -88,8 +88,8 @@ function SectionMotos() {
                 <dialog ref={deleteModalRef} className="border-4 border-black bg-azulIntegradorClaro w-1/3">
                     <div className="flex justify-center flex-col">
                         <ModalEliminar currentPage={currentPage} />
-                        <button className="w-1/5 m-1 font-bold text-white bg-red-600 border p-4" onClick={closeDeleteModal}>Cerrar</button>
-                        <button className="w-1/5 m-1 font-bold text-white bg-red-600 border p-4" onClick={handleDelete}>Eliminar</button>
+                        <button className="w-1/5 m-1 font-bold text-white bg-red-600  rounded-lg p-4" onClick={handleDelete}>Eliminar</button>
+                        <button className="w-1/5 m-1 font-bold text-white bg-red-600  rounded-lg p-4" onClick={closeDeleteModal}>Cerrar</button>
                     </div>
                 </dialog>
 
