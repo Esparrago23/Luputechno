@@ -1,4 +1,4 @@
-# React + Vite
+# React + Vite {Pongan "git pull" en la terminal de la carpeta para ir a al commit mas reciente y estar actualizados en el repositorio} ATTE: vhag233392
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
