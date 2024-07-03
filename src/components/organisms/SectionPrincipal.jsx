@@ -5,7 +5,7 @@ import Principal from "../molecules/Principal"
 function SectionPrincipal() {
     const navigate = useNavigate()
     const handlerClick = (e) => {
-        navigate("/Vehicules")
+        navigate("/MenuVehiculos")
     }
 
     return (
