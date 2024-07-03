@@ -6,7 +6,7 @@ function Login() {
             <SectionLogin></SectionLogin>
             
         </div>
-      
+        
     )
 }
 export default Login

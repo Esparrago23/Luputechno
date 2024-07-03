@@ -17,13 +17,13 @@ function SectionLogin() {
     
     
     return(
-            <div  className= "flex flex-col items-center justify-center w-[400px] h-[500px] space-y-8 bg-gradient-to-t from-blue-700 from-10% via-blue-300 to-sky-500 border border-black rounded-2xl shadow-md "  >
+            <div  className= " flex flex-col items-center justify-center w-[400px] h-[500px] space-y-8 bg-slate-300 border-8 border-black rounded-2xl shadow-md "  >
                 
-                <div className="text-4xl font-semibold text-white" >
-                    <Label  text="Bienvenido"/>
+                <div className="text-4xl font-semibold text-black" >
+                    <Label  text="Bienvenido/a"/>
                 </div>
                 <div className="w-40 h-40">
-                    <Img image={"Logo.png"} />
+                    <Img image={"bus.svg"} />
                 </div >
             <div className="space-y-4 w-[300px]">
                     <Field  text="" type="text" placeholder="Ingresa tu correo" value="" />
