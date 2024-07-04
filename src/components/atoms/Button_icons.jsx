@@ -1,8 +1,8 @@
 import React from 'react'
-function Button_icons({ onClick, children}) {
+function Button_icons({ onClick, children, className}) {
         return (
           <div>
-          <button  onClick={onClick}>{children}</button>
+          <button className={className} onClick={onClick}>{children}</button>
           </div>
         );
     

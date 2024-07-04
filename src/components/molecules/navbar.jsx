@@ -51,7 +51,7 @@ function Navbar() {
         />
       </li>
       <li>
-        <Button_icons>
+        <Button_icons className={"p-3"}>
           <Img image ="/CerrarSesion.png"></Img>
         </Button_icons>
       </li>
