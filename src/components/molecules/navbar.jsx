@@ -17,6 +17,11 @@ function Navbar() {
     <div className="bg-azulIntegrador">
   <nav className="flex justify-between items-center max-w-7xl mx-auto py-4 px-4 sm:px-6 md:px-8">
     <ul className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-8 w-full justify-between">
+    <li>
+        <Button_icons className={"p-1"}>
+          <Img image ="/Logo.png"></Img>
+        </Button_icons>
+      </li>
       <li className="m-2 sm:m-5">
         <Button
           className="py-2 px-4 sm:px-6 rounded-lg bg-azulIntegradorClaro text-black font-bold"
@@ -51,7 +56,7 @@ function Navbar() {
         />
       </li>
       <li>
-        <Button_icons className={"p-3"}>
+        <Button_icons className={"p-2"}>
           <Img image ="/CerrarSesion.png"></Img>
         </Button_icons>
       </li>
