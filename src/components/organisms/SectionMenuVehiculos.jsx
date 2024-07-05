@@ -25,7 +25,7 @@ function SectionMenuVehiculos() {
             image={"motorcycle.svg"}
             text="Motos."
             />
-            <Principal image={"data.svg"} text="Comodatos." />
+            <Principal image={"key.svg"} text="Comodatos." />
         </div>
         </div>
     );

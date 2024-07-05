@@ -1,8 +1,8 @@
-
 import Eliminar from '../molecules/Eliminar';
 import Button from '../atoms/Button';
 import Swal from 'sweetalert2';
 import { useState } from 'react';
+
 const ModalEliminar = ({ currentPage }) => {
   const [inputValue, setInputValue] = useState('');
 
@@ -64,15 +64,17 @@ const ModalEliminar = ({ currentPage }) => {
               'success'
             );
           } else {
-            Swal.fire(
-              'Error',
-              'Hubo un problema al eliminar el elemento.',
-              'error'
-            );
+            return response.json().then(errorData => {
+              Swal.fire(
+                'Error',
+                `Hubo un problema al eliminar el elemento: ${errorData.message || response.statusText}`,
+                'error'
+              );
+            });
           }
         })
         .catch(error => {
-          console.log(error);
+          console.error('Error al eliminar:', error);
           Swal.fire(
             'Error',
             'Hubo un problema al eliminar el elemento.',
