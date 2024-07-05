@@ -1,16 +1,14 @@
-import Input from "../atoms/Input";
-import Label from "../atoms/Label";
-function Eliminar({ title, type, placeholder,onInputChange}) {
-  return (
-    <div>
-      <div>
-        <Label>{title}</Label>
-      </div>
-      <div>
-        <Input type={type} placeholder={placeholder} onChange={onInputChange}/>
-      </div>
-    </div>
-  );
-}
+import React from 'react';
+
+const Eliminar = ({ title, type, placeholder, onInputChange }) => (
+  <div>
+    <h2>{title}</h2>
+    <input
+      type={type}
+      placeholder={placeholder}
+      onChange={onInputChange}
+    />
+  </div>
+);
 
 export default Eliminar;
