@@ -6,6 +6,7 @@ import Select from "../atoms/Select";
 
 function Formulario() {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [inputValue, setInputValue] = useState('');
 
     const openModal = () => {
         setIsModalOpen(true);
@@ -29,13 +30,19 @@ function Formulario() {
 
         closeModal();
     };
+    const{handlerOnchange} = (e)=>{
+        const newvalue = e.target.value
+    console.log(newvalue)
+    setInputValue(newvalue);
+    }
 
     return (
-        <div className="bg-azulIntegradorClaro m-5 flex flex-col">
+        <div  className="bg-azulIntegradorClaro m-5 flex flex-col"> 
             <ElementoFormulario
                 text="No. Economico Vehiculo"
                 placeholder="No. Economico Vehiculo"
                 type="text"
+                onInputChange={handlerOnchange}
             />
 
             <div className="flex flex-row">

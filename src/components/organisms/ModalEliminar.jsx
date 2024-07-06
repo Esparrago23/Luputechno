@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState,useRef } from 'react';
 import Eliminar from '../molecules/Eliminar';
 import Button from '../atoms/Button';
 import Swal from 'sweetalert2';
 
 const ModalEliminar = ({ currentPage }) => {
+  const deleteModalRef = useRef(null);
+  
   const [inputValue, setInputValue] = useState('');
 
   let title = '';
@@ -14,32 +16,39 @@ const ModalEliminar = ({ currentPage }) => {
     case 'resguardante':
       title = 'Eliminar Resguardante';
       placeholder = 'Ingrese la curp del Resguardante';
-      apiEndpoint = 'resguardantes';
+      apiEndpoint = 'Resguardantes';
       break;
     case 'vehiculos':
       title = 'Eliminar Vehículos';
       placeholder = 'Ingrese el no. Económico del Vehículo';
-      apiEndpoint = 'vehiculos';
+      apiEndpoint = 'Vehiculos';
       break;
     case 'mantenimiento':
       title = 'Eliminar Mantenimiento';
       placeholder = 'Ingrese el no. Serie';
-      apiEndpoint = 'mantenimientos';
+      apiEndpoint = 'Mantenimientos';
       break;
     case 'usuarios':
       title = 'Eliminar Usuarios';
       placeholder = 'Ingrese el nombre del Usuario';
-      apiEndpoint = 'usuarios';
+      apiEndpoint = 'Usuarios';
       break;
     default:
       break;
   }
+  const closeDeleteModal = () => {
+    deleteModalRef.current.close();
+  };
 
   const handleInputChange = (e) => {
-    setInputValue(e.target.value);
+    const newvalue = e.target.value
+    console.log(newvalue)
+    setInputValue(newvalue);
+
   };
 
   const handleEliminarClick = () => {
+ 
     if (!inputValue) {
       Swal.fire(
         'Error',
@@ -57,13 +66,17 @@ const ModalEliminar = ({ currentPage }) => {
       confirmButtonText: 'Sí, eliminar',
       cancelButtonText: 'Cancelar'
     }).then((result) => {
+      
       if (result.isConfirmed) {
-        fetch(`${import.meta.env.VITE_URL_API}/${apiEndpoint}/${inputValue}`, {
+        fetch(`${import.meta.env.VITE_URL_API}/${apiEndpoint}`, {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*'
-          }
+          },
+          body:JSON.stringify({
+              'NumeroEconomico':inputValue
+          })
         })
         .then(response => {
           if (response.ok) {
@@ -106,10 +119,10 @@ const ModalEliminar = ({ currentPage }) => {
         <p>Buscar</p>
       </div>
       <div>
-        <Eliminar title={title} type="text" placeholder={placeholder} onInputChange={handleInputChange} />
+        <Eliminar title={title} type="text" placeholder={placeholder} onInputChange={handleInputChange} value={inputValue} />
       </div>
-      <div>
-        <Button onClick={handleEliminarClick}>Eliminar</Button>
+      <div >
+        <Button  className="w-full sm:w-1/3 font-bold text-white bg-red-600 rounded-lg p-2" onClick={handleEliminarClick} title="asd"></Button>
       </div>
     </div>
   );

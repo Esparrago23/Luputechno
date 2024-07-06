@@ -44,12 +44,35 @@ function SectionMotos() {
       "El elemento ha sido eliminado exitosamente.",
       "success"
     );
-    setNotification("Elemento eliminado exitosamente");
+    
   };
 
   const handleCloseNotification = () => {
     setNotification("");
   };
+  const seeVehiculos = (e) => {
+    e.preventDefault()
+    fetch(`${import.meta.env.VITE_URL_API}/Vehiculos`,{
+        method:'GET',
+        headers:{
+            'Content-Type':'application/json',
+            'Access-Control-Allow-Origin':'*'
+        }
+    })
+    .then(response=>{
+        if(response.ok)
+            return response.json()
+    })
+    .then(data=>{
+        console.log(data);
+    })
+    .catch(error=>{
+        console.log(error);
+    }) 
+}
+
+
+
 
   return (
     <>
@@ -59,7 +82,7 @@ function SectionMotos() {
         </div>
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full">
           <Principal onClick={openModal} image={"Moto.png"} text="Añadir." />
-          <Principal image={"Moto.png"} text="Visualizar." />
+          <Principal image={"Moto.png"} text="Visualizar." onClick={seeVehiculos} />
           <Principal
             onClick={openEditModal}
             image={"pen-svgrepo-com(2).svg"}
