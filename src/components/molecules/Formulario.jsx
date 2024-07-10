@@ -25,7 +25,8 @@ function Formulario() {
             title: '¡Éxito!',
             text: 'Resguardante agregado correctamente.',
             icon: 'success',
-            confirmButtonText: 'OK'
+            confirmButtonText: 'OK',
+            target: document.getElementById('principal'),
         });
 
         closeModal();
@@ -37,7 +38,7 @@ function Formulario() {
     }
 
     return (
-        <div  className="flex flex-col m-5 bg-azulIntegradorClaro"> 
+        <div  className="flex flex-col m-5 bg-azulIntegradorClaro" id="principal"> 
             <ElementoFormulario
                 text="No. Economico Vehiculo"
                 placeholder="No. Economico Vehiculo"
@@ -141,7 +142,7 @@ function Formulario() {
                     <ElementoFormulario text="Area De Trabajo" placeholder="Area De Trabajo" type="text" />
                 </div>
                 <div className="flex justify-center">
-                    <button
+                    <button id="botonAgregarResguardante"
                         className="w-1/4 m-1 font-bold text-white bg-green-600 border p-7"
                         onClick={handleAddResguardante}
                     >
