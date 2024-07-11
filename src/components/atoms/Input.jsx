@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 445298277df5055225d8d15c1ac0832a807216f5
 function Input(props) {
     return(
         <input type={props.type} 
