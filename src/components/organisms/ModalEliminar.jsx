@@ -42,13 +42,16 @@ const ModalEliminar = ({ currentPage, onCancel }) => {
   };
 
   const handleEliminarClick = () => {
+    
     if (!inputValue) {
-      Swal.fire(
-        "Error",
-        "Por favor ingrese un valor antes de eliminar.",
-        "warning"
+      return(
+        Swal.fire({
+          title:"Error",
+          text:"Por favor ingrese un valor antes de eliminar.",
+          icon:"error",
+          target:document.getElementById('modalEliminar')
+    })
       );
-      return;
     }
 
     Swal.fire({
@@ -56,6 +59,7 @@ const ModalEliminar = ({ currentPage, onCancel }) => {
       text: "¿Estás seguro de que deseas eliminar?",
       icon: "warning",
       showCancelButton: true,
+      target: document.getElementById('modalEliminar'),
       confirmButtonText: "Sí, eliminar",
       cancelButtonText: "Cancelar",
     }).then((result) => {
@@ -72,46 +76,49 @@ const ModalEliminar = ({ currentPage, onCancel }) => {
         })
           .then((response) => {
             if (response.ok) {
-              Swal.fire(
-                "Eliminado",
-                "El elemento ha sido eliminado.",
-                "success"
-              );
+              Swal.fire({
+                title:"Eliminado",
+                text:"El elemento ha sido eliminado.",
+                icon:"success"
+            });
             } else {
               response
                 .json()
                 .then((errorData) => {
-                  Swal.fire(
-                    "Error",
-                    `Hubo un problema al eliminar el elemento: ${
+                  Swal.fire({
+                    title:"Error",
+                    text:`Hubo un problema al eliminar el elemento: ${
                       errorData.message || response.statusText
                     }`,
-                    "error"
-                  );
+                    icon:"error",
+                    target: document.getElementById('modalEliminar'),
+                });
                 })
                 .catch(() => {
-                  Swal.fire(
-                    "Error",
-                    "Hubo un problema al eliminar el elemento y no se pudo obtener más detalles.",
-                    "error"
-                  );
+                  Swal.fire({
+                    title:"Error",
+                    text:"Hubo un problema al eliminar el elemento y no se pudo obtener más detalles.",
+                    icon:"error",
+                    target: document.getElementById('modalEliminar'),
+                });
                 });
             }
           })
           .catch((error) => {
             console.error("Error al eliminar:", error);
-            Swal.fire(
-              "Error",
-              "Hubo un problema al eliminar el elemento.",
-              "error"
-            );
+            Swal.fire({
+              title:"Error",
+              text:"Hubo un problema al eliminar el elemento.",
+              icon:"error",
+              target: document.getElementById('modalEliminar'),
+          });
           });
       }
     });
   };
 
   return (
-    <div>
+    <div id="modalEliminar">
       <div className="text-center text-white rounded-lg bg-azulIntegrador">
         <span>{title}</span>
       </div>

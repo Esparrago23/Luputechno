@@ -12,6 +12,7 @@ export default {
         'azulIntegrador': '#4B86D1',
         'azulIntegradorClaro': '#CAF0F8',
         'azullogin': '#87B8F2',
+        'azulselec': '#8994A9'
       },
     },
   },
