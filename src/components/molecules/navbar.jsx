@@ -37,14 +37,21 @@ function Navbar() {
           </li>
           <li className="text-base font-normal text-white bg-red-700">
             <Button
+              className="px-2 py-1 text-sm font-bold text-black rounded-lg sm:px-4 sm:py-2 md:px-6 md:py-3 lg:px-8 lg:py-4 bg-azulIntegradorClaro"
               title="Mantenimiento"
             />
           </li>
-          <li className="text-base font-normal text-white bg-red-700">
-            <Button title="Bitacora" />
+          <li className="m-2 sm:m-5">
+            <Button
+              className="px-2 py-1 text-sm font-bold text-black rounded-lg sm:px-4 sm:py-2 md:px-6 md:py-3 lg:px-8 lg:py-4 bg-azulIntegradorClaro"
+              title="Bitacora"
+            />
           </li>
-          <li className="font-normal bg-red-700">
-            <Button className="font-normal text-white" title="Usuario" />
+          <li className="m-2 sm:m-5">
+            <Button
+              className="px-2 py-1 text-sm font-bold text-black rounded-lg sm:px-4 sm:py-2 md:px-6 md:py-3 lg:px-8 lg:py-4 bg-azulIntegradorClaro"
+              title="Usuario"
+            />
           </li>
           <li>
             <Button_icons className="text-base bg-green-600 ">

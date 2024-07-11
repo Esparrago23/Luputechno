@@ -1,9 +1,10 @@
 import React from 'react';
+import Input from '../atoms/Input'
 
 const Eliminar = ({ title, type, placeholder, onInputChange }) => (
   <div>
     <h2>{title}</h2>
-    <input
+    <Input
       type={type}
       placeholder={placeholder}
       onChange={onInputChange}
